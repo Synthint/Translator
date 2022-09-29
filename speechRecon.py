@@ -1,15 +1,17 @@
 import speech_recognition
 from gtts import gTTS
-from googletrans import Translator
+from googletrans import Translator, constants
 from playsound import playsound
 import os
 
 TRANSLATE_TO_LANGUAGE = "pl"
 TRANSLATE_FROM_LANGUAGE = "en"
 
-
-
 translator = Translator()
+
+print("================================================================")
+print(f"Currently translating {constants.LANGUAGES[TRANSLATE_FROM_LANGUAGE]} to {constants.LANGUAGES[TRANSLATE_TO_LANGUAGE]}, speak to translate\n")
+
 #res = translator.translate("Thank You",dest = "polish",src="en")
 #print(f"{res.text} \n\n")
 
@@ -18,7 +20,7 @@ recognizer = speech_recognition.Recognizer()
 def speak(input,toLang,fromLang):
     res = translator.translate(input,dest = toLang,src=fromLang)
     audio = gTTS(text = res.text,lang = toLang,slow=True)
-    filename = "pyAud.mp3"
+    filename = "tempTranslation.mp3"
     audio.save(filename)
     playsound(filename)
     os.remove(filename)
