@@ -2,4 +2,4 @@ SpeechRecognition==3.8.1
 gtts==2.2.4
 googletrans==3.1.0a0
 playsound==1.2.2
-pyAudio==0.2.12
+PyAudio==0.2.12

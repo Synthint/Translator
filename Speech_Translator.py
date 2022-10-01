@@ -4,9 +4,10 @@ from googletrans import Translator, constants  # 3.1.0a0
 from playsound import playsound  # 1.2.2
 # pyAudio 0.2.12
 import os
+import sys
 
-TRANSLATE_TO_LANGUAGE = "pl"
-TRANSLATE_FROM_LANGUAGE = "en"
+TRANSLATE_TO_LANGUAGE = "pl" if len(sys.argv) <= 1 else sys.argv[1]
+TRANSLATE_FROM_LANGUAGE = "en" if len(sys.argv) <= 2 else sys.argv[2]
 LANG_DETECTION =  False
 
 
