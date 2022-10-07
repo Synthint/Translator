@@ -7,8 +7,8 @@ from playsound import playsound  # 1.2.2
 import os
 import sys
 
-OUTPUT_LANG = "pl" if len(sys.argv) <= 1 else sys.argv[1]
-INPUT_LANG = "en" if len(sys.argv) <= 2 else sys.argv[2]
+OUTPUT_LANG = "de" if len(sys.argv) <= 2 else sys.argv[1]
+INPUT_LANG = "en" if len(sys.argv) <= 1 else sys.argv[2]
 LANG_DETECTION = False
 
 
